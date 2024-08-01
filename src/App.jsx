@@ -1,10 +1,11 @@
 // App.js
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-
+import Category from "./components/Category";
 import Navbar from "./components/Navbar";
 import Detail from "./screens/Detail";
-import { Category, Home } from "./screens/Home";
+import Home from "./screens/Home";
+import Product from "./screens/Product";
 const App = () => {
   return (
     <Router>
@@ -14,7 +15,10 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         {/* <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} /> */}
-        <Route path="/details/:id" element={<Detail />} />
+
+        
+        <Route path="/category/:id/details" element={<Detail />} />
+        <Route path="/category/:id" element={<Product />} />
       </Routes>
     </Router>
   );
